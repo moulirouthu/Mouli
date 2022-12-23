@@ -1,0 +1,425 @@
+Assignment -1:
+Write a program to print given number is palindrome or not?
+
+n=input('enter number: ')
+temp=n
+if n[::-1]==temp:print('palindrome')
+else:print('not palindrome')
+
+output
+enter number: 121
+palindrome
+
+*********************************************************************************************
+
+
+Assignment -2:
+Write a program to print given year is leap year or not?
+
+y=int(input('enter year: '))
+if (y%4==0 and y%100!=0) or (y%400==0):print('leap year')
+else:print('not leap year')
+
+output
+enter year: 2024
+leap year
+
+*********************************************************************************************
+
+Assignment-3:
+Write a program to print Fibonacci n series?
+
+def fib(n):
+    c=0
+    a=-1
+    b=1
+    for i in range(1,n+1):
+        c=a+b
+        print(c)
+        a=b
+        b=c
+
+n=int(input('enter limit: '))
+print(fib(n))
+
+output
+enter limit: 10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+*********************************************************************************************
+
+Assignment-4:
+Write a program to find maximum and minimum from the given digit?
+
+n=int(input('enter number'))
+b=0
+s=1000
+while n!=0:
+    r=n%10
+    s=min(r,s)
+    b=max(r,b)
+    n=n//10
+print('maximum value:',b)
+print('minimum value:',s)
+
+output
+enter number123456
+maximum value: 6
+minimum value: 1
+
+*********************************************************************************************    
+
+Assignment-5:
+Write a program to print given number is prime or not.
+
+n=int(input('enter number: '))
+i=2
+c=2
+while i<n:
+    if n%i==0:
+        c=c+1
+        break
+    i=i+1
+if c==2:print('prime')
+else:print('not prime')
+
+output
+enter number: 3
+prime
+
+*********************************************************************************************
+
+Assignment -6:
+Write a program to print given number is happy number or not.
+
+def s(n):
+    s1=0
+    while(n!=0):
+        r=n%10
+        s1=s1+(r*r)
+        n=n//10
+    return s1    
+n=int(input('enter number:'))
+while n>9:
+    n=s(n)
+if n==1 or n==7:
+    print('happy number')
+else:
+
+    print('not happy number')
+
+output
+enter number:82
+happy number
+
+*********************************************************************************************
+
+Assignment -7:
+Write a program to print given number is perfect or not?
+
+n=int(input('enter number: '))
+i=1
+s=0
+while i<n:
+    if n%i==0:
+        s=s+i
+    i=i+1
+if s==n:print('perfect number')
+else:print('not perfect number')
+
+output
+enter number: 6
+perfect number
+
+
+*********************************************************************************************
+
+Assignment -8:
+Write a program to print leap years upto given range?
+
+def leap(y):
+    if ((y%4==0 and y%100!=0) or (y%400==0)):
+        return 1
+    else:
+        return 0
+    
+n1=int(input('enter starting year: '))
+n2=int(input('enter ending year: '))
+while n1<n2:
+    if leap(n1)==1:
+        print(n1,end=' ')
+    n1=n1+1
+
+output
+enter starting year: 2022
+enter ending year: 2050
+2024 2028 2032 2036 2040 2044 2048
+
+*********************************************************************************************
+
+Assignment-9:
+Write a program to print sum of n febnocci series?
+
+n=int(input('enter limit: '))
+c=0
+a=-1
+b=1
+sum=0
+for i in range(1,n+1):
+    c=a+b
+    sum=sum+c
+    a=b
+    b=c
+
+print(sum)
+
+output
+enter limit: 10
+88
+
+
+*********************************************************************************************
+
+
+Assignment-10:
+Write a program to count n prime numbers in the given range.
+
+def isprime(n):
+    c=0
+    for i in range(1,n+1):
+        if n%i==0:
+            c=c+1
+    return c
+n=int(input('enter limit: '))
+pc=0
+for i in range(1,n+1):
+    if isprime(i)==2:
+        pc=pc+1
+        print(i,end=' ')
+print()
+print('prime count = ',pc)
+
+output
+enter limit: 10
+2 3 5 7 
+prime count =  4
+
+
+*********************************************************************************************
+
+Assignment-11:
+Write a program to print sum of n prime numbers.
+
+def isprime(n):
+    c=0
+    for i in range(1,n+1):
+        if n%i==0:
+            c=c+1
+    return c
+n=int(input('enter limit: '))
+pc=0
+sum=0
+for i in range(1,n+1):
+    if isprime(i)==2:
+        sum=sum+i
+        print(i,end=' ')
+print()
+print('sum of prime numbers = ',sum)
+
+output
+enter limit: 10
+2 3 5 7 
+sum of prime numbers =  17
+
+
+*********************************************************************************************
+
+Assignment -12:
+Write a program to print factorial of the given number.
+
+import math
+n=int(input('enter number: '))
+print(math.factorial(n))
+
+output
+enter number: 5
+120
+
+
+*********************************************************************************************
+
+
+Assignment -13:
+Write a program to print given list is Unique or Duplicate?
+
+n=int(input())
+l=list(map(int,input().split()))
+c=0
+for i in range(0,n):
+    for j in range(i+1,n):
+        if l[i]==l[j]:
+            c=1
+            break
+if c==1:
+    print('Duplicate')
+else:
+    print('Unique')
+
+output
+5
+1 2 3 4 1
+Duplicate
+
+
+*********************************************************************************************
+
+
+Assignment -14:
+Write a program to print previous happy number of the given number?
+
+def s(n):
+    s1=0
+    while(n!=0):
+        r=n%10
+        s1=s1+(r*r)
+        n=n//10
+    return s1    
+n=int(input('enter number:'))
+for i in range(n-1,0,-1):
+    n1=i
+    while i>9:
+        i=s(i)
+    if i==1 or i==7:
+        break
+    
+print(n1)
+
+output
+enter number:82
+79
+
+
+*********************************************************************************************
+
+
+Assignment-15:
+Write a program to print Unique single number for the duplicate list?
+
+n=int(input())
+l=list(map(int,input().split()))
+print(l)
+s=set(l)
+x=list(s)
+print(x)
+
+output
+5
+2 3 6 6 5
+[2, 3, 6, 6, 5]
+[2, 3, 5, 6]
+
+
+*********************************************************************************************
+
+
+Assignment-16:
+Write a program to print difference between maximum and minimum
+number from the given list.
+
+n=int(input())
+l=list(map(int,input().split()))
+print(max(l)-min(l))
+
+output
+5
+1 2 3 4 5
+4
+
+
+*********************************************************************************************
+
+
+Assignment-17:
+Write a program to print reverse of the given list.
+
+l=list(map(int,input().split()))
+l.reverse()
+print(l)
+
+output
+0 1 2 3 4 6 8 9
+[9, 8, 6, 4, 3, 2, 1, 0]
+
+
+*********************************************************************************************
+
+
+Assignment-18:
+Write a program to arrange elements in sequential order.
+
+l=list(map(int,input().split()))
+l.sort()
+print(l)
+
+output
+9 8 7 6 54
+[6, 7, 8, 9, 54]
+
+
+*********************************************************************************************
+
+
+Assignment-19:
+Write a program to print square root of the given number.
+If square root is greater than 10,print 'Hello' otherwise
+print 'Hi'
+
+import math
+n=int(input('enter number: '))
+s=math.sqrt(n)
+print(s)
+if s>10:
+    print('Hello')
+else:
+    print('Hi')
+
+output
+enter number: 225
+15.0
+Hello
+
+
+*********************************************************************************************
+
+
+Assignment-20:
+Write a program to maximum prime number and minimum prime number from the given list.
+
+def isprime(n):
+    c=0
+    for i in range(1,n+1):
+        if n%i==0:
+            c=c+1
+    return c
+n=int(input())
+l=list(map(int,input().split()))
+max=l[0]
+min=1000
+for i in range(0,n):
+    if isprime(l[i])==2:
+        if l[i]>max:
+            max=l[i]
+        if l[i]<min:
+            min=l[i]
+print('maximum prime number: ',max)
+print('minimum prime number: ',min)
+    
